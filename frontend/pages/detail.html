@@ -1,0 +1,178 @@
+<section class="detail-page container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="#home" data-page="home" data-scroll="#home">Beranda</a>
+
+    <span aria-hidden="true">/</span>
+
+    <span id="breadcrumb-category">Kategori</span>
+
+    <span aria-hidden="true">/</span>
+
+    <span id="breadcrumb-vehicle-name">Detail mobil</span>
+  </nav>
+
+  <div id="detail-empty-state" class="empty-state" hidden>
+    <h1>Belum ada mobil yang dipilih.</h1>
+    <p>Pilih mobil terlebih dahulu untuk melihat detailnya.</p>
+
+    <a
+      href="#vehicles"
+      class="btn btn-primary"
+      data-page="home"
+      data-scroll="#vehicles"
+    >
+      Pilih mobil
+    </a>
+  </div>
+
+  <div id="detail-content" hidden>
+    <div class="detail-layout">
+      <div class="detail-gallery">
+        <img src="" alt="" id="detail-image" width="800" height="500" />
+      </div>
+
+      <aside class="booking-card">
+        <div class="detail-meta">
+          <span id="detail-category" class="detail-category">Kategori</span>
+
+          <span id="detail-status" class="badge badge-available">Tersedia</span>
+        </div>
+
+        <h1 id="detail-name" class="detail-title">Nama mobil</h1>
+
+        <p class="detail-price">
+          <strong id="detail-price">Rp 0</strong>
+          <span>/ 24 jam</span>
+        </p>
+
+        <hr class="detail-divider" />
+
+        <fieldset class="rental-fieldset">
+          <legend>Periode sewa</legend>
+
+          <div class="form-field">
+            <label for="rental-start" class="form-label"> Waktu mulai </label>
+
+            <input
+              type="datetime-local"
+              id="rental-start"
+              class="form-input"
+              required
+              aria-describedby="rental-help"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="rental-duration" class="form-label">
+              Durasi sewa (hari)
+            </label>
+
+            <input
+              type="number"
+              id="rental-duration"
+              class="form-input"
+              min="1"
+              max="30"
+              step="1"
+              value="1"
+              required
+              aria-describedby="rental-help"
+            />
+          </div>
+
+          <p id="rental-help" class="form-help">
+            Sewa minimal 24 jam dan dihitung per 24 jam. Durasi yang tersedia
+            pada simulasi ini 1–30 hari.
+          </p>
+
+          <div class="form-field">
+            <label for="rental-end" class="form-label"> Waktu selesai </label>
+
+            <input
+              type="datetime-local"
+              id="rental-end"
+              class="form-input"
+              readonly
+              aria-label="Waktu selesai sewa otomatis"
+            />
+          </div>
+        </fieldset>
+
+        <div class="cost-summary">
+          <div class="cost-row">
+            <span>Durasi</span>
+            <strong id="rental-days">1 hari</strong>
+          </div>
+
+          <div class="cost-row">
+            <span>Tarif per 24 jam</span>
+            <strong id="rental-rate">Rp 0</strong>
+          </div>
+
+          <hr class="detail-divider" />
+
+          <div class="cost-row cost-row-total">
+            <span>Total estimasi</span>
+            <strong id="rental-total">Rp 0</strong>
+          </div>
+        </div>
+
+        <p id="detail-unavailable-message" class="alert" hidden>
+          Mobil ini sedang tidak dapat dipesan.
+        </p>
+
+        <p
+          id="availability-message"
+          class="status-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+        <div class="booking-actions">
+          <button type="button" class="btn btn-outline" id="check-availability">
+            Cek ketersediaan
+          </button>
+
+          <button type="button" class="btn btn-primary" id="continue-payment">
+            Lanjut ke pembayaran
+          </button>
+        </div>
+
+        <p class="form-help">
+          Estimasi ini belum memeriksa benturan jadwal melalui server.
+        </p>
+      </aside>
+
+      <section class="detail-description">
+        <h2>Deskripsi</h2>
+        <p id="detail-description"></p>
+      </section>
+
+      <section class="detail-specifications">
+        <h2>Spesifikasi</h2>
+
+        <dl class="spec-list">
+          <div class="spec-row">
+            <dt>Kategori</dt>
+            <dd id="spec-category">—</dd>
+          </div>
+
+          <div class="spec-row">
+            <dt>Kapasitas</dt>
+            <dd id="detail-capacity">—</dd>
+          </div>
+
+          <div class="spec-row">
+            <dt>Status</dt>
+            <dd id="spec-status">—</dd>
+          </div>
+
+          <div class="spec-row">
+            <dt>Harga per 24 jam</dt>
+            <dd id="spec-price">—</dd>
+          </div>
+        </dl>
+      </section>
+    </div>
+  </div>
+</section>

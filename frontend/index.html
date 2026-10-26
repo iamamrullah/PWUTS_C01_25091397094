@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Rental mobil yang mudah dan praktis untuk menemani perjalanan Anda."
+    />
+
+    <title>Arjuno Rentcar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/detail.css" />
+    <link rel="stylesheet" href="assets/css/payment.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#app-content"> Lewati ke Konten </a>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Navigasi utama">
+        <a href="#home" class="brand" data-page="home" data-scroll="#home">
+          Arjuno<span>RentCar.</span>
+        </a>
+
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Buka Navigasi"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-menu" id="nav-menu">
+          <a
+            href="#home"
+            class="nav-link is-active"
+            data-page="home"
+            data-scroll="#home"
+          >
+            Beranda
+          </a>
+
+          <a
+            href="#vehicles"
+            class="nav-link"
+            data-page="home"
+            data-scroll="#vehicles"
+          >
+            Pilihan Mobil
+          </a>
+
+          <a href="#payment" class="nav-link" data-page="payment">
+            Pembayaran
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="app-content">
+      <section class="hero hero-full-bg" id="home">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <span class="eyebrow">PARTNER PERJALANAN ANDA</span>
+
+            <h1>
+              Perjalanan Nyaman,
+              <span>Dimulai dari Sini.</span>
+            </h1>
+
+            <p class="hero-description">
+              Temukan mobil yang sesuai dengan kebutuhan Anda. Proses penyewaan
+              lebih mudah untuk menemani setiap perjalanan.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#vehicles" class="btn btn-primary"> Jelajahi mobil </a>
+
+              <a
+                href="#detail"
+                class="btn btn-outline"
+                data-page="detail"
+              >
+                Pelajari Lebih Lanjut
+              </a>
+            </div>
+
+            <div class="hero-note">
+              <span class="note-dot"></span>
+              Pilihan kendaraan untuk kebutuhan perjalanan Anda
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="vehicle-section" id="vehicles">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">TEMUKAN KENDARAAN</span>
+              <h2>Mobil untuk Perjalanan</h2>
+            </div>
+
+            <p>
+              Pilih kendaraan yang sesuai dengan rencana dan kebutuhan
+              perjalanan Anda.
+            </p>
+          </div>
+
+          <div
+            id="vehicle-list"
+            class="vehicle-grid"
+            aria-busy="true"
+            aria-live="polite"
+          >
+            <div class="placeholder-card">
+              <div class="placeholder-image"></div>
+              <div class="placeholder-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <div class="placeholder-card">
+              <div class="placeholder-image"></div>
+              <div class="placeholder-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <div class="placeholder-card">
+              <div class="placeholder-image"></div>
+              <div class="placeholder-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking-banner">
+        <div class="container booking-banner-content">
+          <div>
+            <span class="eyebrow">SIAP UNTUK BERANGKAT?</span>
+            <h2>Rencanakan Perjalananmu Sekarang.</h2>
+            <p>
+              Lanjutkan ke halaman pembayaran setelah menentukan kendaraan yang
+              dibutuhkan.
+            </p>
+          </div>
+
+          <a href="#payment" class="btn btn-light" data-page="payment">
+            Buka Pembayaran
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <a href="#home" class="brand" data-page="home">
+          Arjuno<span>RentCar.</span>
+        </a>
+
+        <p>Solusi penyewaan mobil untuk perjalanan Anda.</p>
+
+        <span class="copyright">
+          &copy; <span id="current-year"></span> Arjuno RentCar.
+        </span>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

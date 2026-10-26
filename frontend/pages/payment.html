@@ -1,0 +1,302 @@
+<section class="payment-page container">
+  <header class="payment-heading">
+    <span class="eyebrow">LANGKAH TERAKHIR</span>
+
+    <h1>Pembayaran</h1>
+
+    <p>
+      Lengkapi data penyewa dan siapkan bukti pembayaran sesuai total biaya yang
+      tertera.
+    </p>
+
+    <p class="form-help">
+      * Wajib diisi. Halaman ini masih berupa simulasi frontend. Data belum
+      dikirim ke server.
+    </p>
+  </header>
+
+  <div id="payment-empty-state" class="empty-state" hidden>
+    <h2>Belum ada mobil yang dipilih.</h2>
+
+    <p>
+      Pilih mobil dan tentukan periode sewanya sebelum melanjutkan ke halaman
+      pembayaran.
+    </p>
+
+    <a
+      href="#vehicles"
+      class="btn btn-primary"
+      data-page="home"
+      data-scroll="#vehicles"
+    >
+      Pilih mobil
+    </a>
+  </div>
+
+  <div id="payment-form-layout" class="payment-layout" hidden>
+    <form id="payment-form" class="payment-form" novalidate>
+      <section class="form-section">
+        <div class="step-heading">
+          <span class="step-number">01</span>
+
+          <div>
+            <h2>Data penyewa</h2>
+            <p>Isi informasi kontak yang dapat dihubungi.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field form-field-full">
+            <label for="customer-name" class="form-label">
+              Nama lengkap *
+            </label>
+
+            <input
+              type="text"
+              id="customer-name"
+              class="form-input"
+              name="customer_name"
+              placeholder="Sesuai KTP"
+              autocomplete="name"
+              required
+              aria-describedby="name-error"
+            />
+
+            <p class="form-error" id="name-error" hidden></p>
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="customer-phone" class="form-label">
+              Nomor telepon/WhatsApp *
+            </label>
+
+            <div class="phone-input-group">
+              <span class="phone-prefix" aria-hidden="true"> +62 </span>
+
+              <input
+                type="tel"
+                id="customer-phone"
+                class="form-input"
+                name="customer_phone"
+                placeholder="81234567890"
+                inputmode="tel"
+                autocomplete="tel-national"
+                required
+                aria-describedby="phone-help phone-error"
+              />
+            </div>
+
+            <p class="form-help" id="phone-help">
+              Masukkan nomor tanpa kode negara dan tanpa tanda baca.
+            </p>
+
+            <p class="form-error" id="phone-error" hidden></p>
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="customer-email" class="form-label"> Email * </label>
+
+            <input
+              type="email"
+              id="customer-email"
+              class="form-input"
+              name="customer_email"
+              placeholder="nama@email.com"
+              autocomplete="email"
+              required
+              aria-describedby="email-error"
+            />
+
+            <p class="form-error" id="email-error" hidden></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="step-heading">
+          <span class="step-number">02</span>
+
+          <div>
+            <h2>Instruksi pembayaran</h2>
+            <p>Periksa nominal dan tujuan pembayaran.</p>
+          </div>
+        </div>
+
+        <div class="payment-amount">
+          <span>Nominal yang harus dibayar</span>
+          <strong id="payment-amount">Rp 0</strong>
+        </div>
+
+        <dl class="bank-details">
+          <div>
+            <dt>Nama bank</dt>
+            <dd id="payment-bank-name">Belum dikonfigurasi</dd>
+          </div>
+
+          <div>
+            <dt>Nomor rekening</dt>
+
+            <dd class="account-number-row">
+              <span id="payment-account-number"> Belum dikonfigurasi </span>
+
+              <button
+                type="button"
+                class="copy-account-btn"
+                id="copy-account"
+                aria-label="Salin nomor rekening"
+                title="Salin nomor rekening"
+                disabled
+              >
+                <i class="fa-regular fa-copy" aria-hidden="true"></i>
+              </button>
+            </dd>
+          </div>
+
+          <div>
+            <dt>Atas nama</dt>
+            <dd id="payment-account-holder">Belum dikonfigurasi</dd>
+          </div>
+        </dl>
+
+        <p
+          id="copy-account-message"
+          class="form-help"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+        <p class="payment-note">
+          Pembayaran dilakukan di luar sistem. Setelah membayar, siapkan bukti
+          untuk langkah berikutnya. Informasi rekening harus diisi dengan data
+          resmi pemilik rental.
+        </p>
+      </section>
+
+      <section class="form-section">
+        <div class="step-heading">
+          <span class="step-number">03</span>
+
+          <div>
+            <h2>Unggah bukti pembayaran</h2>
+            <p>Pilih berkas bukti dalam format yang diizinkan.</p>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <span class="form-label"> Bukti pembayaran * </span>
+
+          <label for="proof-file" class="dropzone" id="proof-dropzone">
+            <input
+              type="file"
+              id="proof-file"
+              class="visually-hidden-file"
+              accept="image/jpeg,image/png"
+              aria-describedby="proof-help proof-error"
+            />
+
+            <span class="dropzone-title">
+              Tarik file ke sini atau
+              <strong>pilih berkas</strong>
+            </span>
+
+            <span class="dropzone-caption" id="proof-help">
+              JPG atau PNG, maksimal 10 MB
+            </span>
+          </label>
+
+          <div class="file-preview" id="proof-preview" hidden>
+            <img
+              src=""
+              alt="Pratinjau bukti pembayaran"
+              id="proof-preview-image"
+              width="56"
+              height="56"
+            />
+
+            <div class="file-preview-info">
+              <span id="proof-file-name"></span>
+              <span class="form-help" id="proof-file-size"></span>
+            </div>
+
+            <button type="button" class="text-button" id="remove-proof">
+              Hapus
+            </button>
+          </div>
+
+          <p class="form-error" id="proof-error" hidden></p>
+        </div>
+
+        <div class="agreement-field">
+          <input
+            type="checkbox"
+            id="payment-agreement"
+            name="payment_agreement"
+            required
+            aria-describedby="agreement-error"
+          />
+
+          <label for="payment-agreement">
+            Saya memahami bahwa pemesanan tidak dapat dibatalkan atau
+            dikembalikan dananya melalui sistem.
+          </label>
+        </div>
+
+        <p class="form-error" id="agreement-error" hidden></p>
+
+        <button type="submit" class="btn btn-primary payment-submit">
+          Kirim bukti pembayaran
+        </button>
+
+        <a href="#detail" class="back-to-detail" data-page="detail">
+          Kembali ke detail mobil
+        </a>
+      </section>
+    </form>
+
+    <aside class="summary-card payment-summary">
+      <h2>Ringkasan sewa</h2>
+
+      <div class="summary-vehicle">
+        <img src="" alt="" id="summary-vehicle-image" width="80" height="60" />
+
+        <div>
+          <h3 id="summary-vehicle-name">Nama mobil</h3>
+          <p id="summary-category">Kategori</p>
+        </div>
+      </div>
+
+      <dl class="summary-details">
+        <div>
+          <dt>Mulai</dt>
+          <dd id="summary-start">—</dd>
+        </div>
+
+        <div>
+          <dt>Selesai</dt>
+          <dd id="summary-end">—</dd>
+        </div>
+
+        <div>
+          <dt>Durasi</dt>
+          <dd id="summary-duration">—</dd>
+        </div>
+
+        <div>
+          <dt>Tarif per 24 jam</dt>
+          <dd id="summary-rate">—</dd>
+        </div>
+      </dl>
+
+      <div class="summary-total">
+        <span>Total pembayaran</span>
+        <strong id="summary-total">Rp 0</strong>
+      </div>
+
+      <a href="#detail" class="summary-edit-link" data-page="detail">
+        Ubah periode
+      </a>
+    </aside>
+  </div>
+
+  <div id="payment-success" hidden></div>
+</section>
